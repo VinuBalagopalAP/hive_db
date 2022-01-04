@@ -13,15 +13,16 @@ class ListStudentWidget extends StatelessWidget {
           (BuildContext ctx, List<StudentModel> studentList, Widget? child) {
         return ListView.separated(
           itemBuilder: (ctx, index) {
+            final data = studentList[index];
             return ListTile(
-              title: Text("Name $index"),
-              subtitle: Text('Age $index'),
+              title: Text(data.name),
+              subtitle: Text(data.age),
             );
           },
           separatorBuilder: (ctx, index) {
             return const Divider();
           },
-          itemCount: 50,
+          itemCount: studentList.length,
         );
       },
     );

@@ -5,5 +5,5 @@ ValueNotifier<List<StudentModel>> studnetListNotifier = ValueNotifier([]);
 
 void addStudent(StudentModel value) {
   studnetListNotifier.value.add(value);
-  // print(value.toString());
+  studnetListNotifier.notifyListeners();
 }
